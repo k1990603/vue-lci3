@@ -1,6 +1,6 @@
-# nuxt
+# my-nuxt-demo
 
-> My extraordinary Nuxt.js project
+> My badass Nuxt.js project
 
 ## Build Setup
 

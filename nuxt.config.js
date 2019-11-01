@@ -1,10 +1,10 @@
 
-module.exports = {
-  mode: 'spa',
+export default {
+  mode: 'universal', //  当前渲染使用模式
   /*
   ** Headers of the page
   */
-  head: {
+  head: { //  页面head配置信息
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
@@ -15,20 +15,26 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  router: {
+    // Run the middleware/user-agent.js on every page
+    mode: 'hash'
+  },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#fff' }, //  页面进度条 颜色
   /*
   ** Global CSS
   */
   css: [
-    'tachyons/css/tachyons.css'
+    'ant-design-vue/dist/antd.css',
+    '~/assets/css/common.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
+  plugins: [ // 插件
+    '@/plugins/antd-ui'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -40,14 +46,38 @@ module.exports = {
   */
   modules: [
   ],
+  // styleResources: {
+    // scss: './assets/variables.scss',
+    // less: './assets/**/*.less',
+    // css: '~/assets/css/common.css',
+    // sass: ...
+  // },
   /*
   ** Build configuration
   */
   build: {
+    // loaders:[
+    //   {
+    //     test:/\.(png|jpe?g|gif|svg)$/,
+    //     loader:"url-loader",
+    //     query:{
+    //       limit:10000,
+    //       name:'img/[name].[hash].[ext]'
+    //     }
+    //   }
+    // ],
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend (config, text) {
+      // if (isDev && isClient) {
+      //   config.module.rules.push({
+      //     enforce: 'pre',
+      //     test: /\.(js|vue)$/,
+      //     loader: 'eslint-loader',
+      //     exclude: /(node_modules)/
+      //   })
+      // }
     }
   }
 }

@@ -3,11 +3,22 @@
     <div>
       <logo />
       <h1 class="title">
-        nuxt
+        my-nuxt-demo
       </h1>
       <h2 class="subtitle">
-        My extraordinary Nuxt.js project
+        My badass Nuxt.js project
       </h2>
+      <p class='redColr'>lllalalla</p>
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li>
+          <nuxt-link to="/user">首页</nuxt-link>
+          <nuxt-link target="_blank" :to="{name: 'user'}" ></nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/user/one">one</nuxt-link>
+        </li>
+      </ul>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -38,7 +49,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;
